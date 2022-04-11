@@ -9,6 +9,11 @@ export default function App() {
   const [userNumber, setUserNumber] = useState();
   const [gassRounds, setGassRounds] = useState(0);
 
+  const configerNewGameHandler = () => {
+    setGassRounds(0);
+    setUserNumber(null);
+  };
+
   const startGameHandler = (selectedNumber) => {
     setUserNumber(selectedNumber);
     setGassRounds(0);
@@ -22,7 +27,13 @@ export default function App() {
   if (userNumber && gassRounds <= 0) {
     content = <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />;
   } else if (gassRounds > 0) {
-    content = <GameOverScreen />;
+    content = (
+      <GameOverScreen
+        roundsNumber={gassRounds}
+        userNumber={userNumber}
+        onRestart={configerNewGameHandler}
+      />
+    );
   }
 
   return (
