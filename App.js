@@ -11,8 +11,8 @@ import GameOverScreen from './screens/GameOverScreen';
 
 const fethFonts = () => {
   return Font.loadAsync({
-    'open-sans': require('./assets/fonts/OpenSans-Italic.ttf'),
-    'open-sans-bold': require('./assets/fonts/OpenSans-VariableFont.ttf'),
+    'open-sans-medium': require('./assets/fonts/OpenSans-Medium.ttf'),
+    'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
   });
 };
 
